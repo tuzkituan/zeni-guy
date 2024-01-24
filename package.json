@@ -1,0 +1,23 @@
+{
+  "name": "zeni-guy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:deps": "npm --prefix ./main-app install && npm --prefix ./apps/zeni-ui-components install",
+    "postinstall:deps": "npm --prefix ./main-app run build && npm --prefix ./apps/zeni-ui-components run build",
+    "dev-app:main": "npm --prefix ./main-app run dev",
+    "dev-app:ui-components": "npm --prefix ./apps/zeni-ui-components run build:watch",
+    "preview:ui-components": "npm --prefix ./apps/zeni-ui-components run preview",
+    "dev:build": "run-p dev-app:*",
+    "dev:run": "run-p preview:*",
+    "build:main": "npm --prefix ./main-app run build",
+    "build:ui-components": "npm --prefix ./apps/zeni-ui-components run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

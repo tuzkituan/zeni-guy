@@ -2,7 +2,6 @@ import federation from "@originjs/vite-plugin-federation";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -10,7 +9,10 @@ export default defineConfig({
       name: "zeni-ui-components",
       filename: "remoteEntry.js",
       exposes: {
-        "./all": "./src/App.tsx",
+        "./app": {
+          import: "./src/App.tsx",
+          dontAppendStylesToHead: true,
+        },
       },
       shared: ["react"],
     }),

@@ -1,17 +1,18 @@
-import federation from "@originjs/vite-plugin-federation";
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import federation from '@originjs/vite-plugin-federation';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "main-app",
+      name: 'main-app',
       remotes: {
-        zeni_ui_components: "http://localhost:1406/assets/remoteEntry.js",
+        portfolio: 'http://localhost:1405/assets/remoteEntry.js',
+        zeni_ui_components: 'http://localhost:1406/assets/remoteEntry.js',
       },
-      shared: ["react"],
+      shared: ['react'],
     }),
   ],
   server: {
@@ -23,8 +24,9 @@ export default defineConfig({
   },
   build: {
     modulePreload: false,
-    target: "esnext",
+    target: 'esnext',
     minify: false,
     cssCodeSplit: false,
   },
+  publicDir: '../apps/portfolio/public',
 });

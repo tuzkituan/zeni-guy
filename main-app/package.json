@@ -13,6 +13,8 @@
     "@phosphor-icons/react": "^2.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
+    "vite-multiple-assets": "^1.2.10",
     "zeni-ui": "1.2.7-beta"
   },
   "devDependencies": {

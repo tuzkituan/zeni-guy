@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "zeni-ui": "1.2.5-beta"
+    "zeni-ui": "1.2.7-beta"
   },
   "devDependencies": {
     "@originjs/vite-plugin-federation": "^1.3.4",

@@ -2864,10 +2864,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zeni-ui@1.2.5-beta:
-  version "1.2.5-beta"
-  resolved "https://registry.yarnpkg.com/zeni-ui/-/zeni-ui-1.2.5-beta.tgz#4d2de718675492a527bd822da56b75b527843827"
-  integrity sha512-hYwZt9rHtVX2OPfQAnnX1bhrVTny6uTpMRTQruBj/A17NopJnWx2W/KgthIyMJPRkFZAB+CzKnw2IsLRgWsCEQ==
+zeni-ui@1.2.7-beta:
+  version "1.2.7-beta"
+  resolved "https://registry.yarnpkg.com/zeni-ui/-/zeni-ui-1.2.7-beta.tgz#eb3a297610d7c75f86a721f2bc51312db56f446a"
+  integrity sha512-K4wJNK2h62aUiMOiExBzDdxT6+adsDgOK78xlqpABlwZ6RNNnzBvLXlN675DZzd4SH1Panawl2HVxnlG4eMB7g==
   dependencies:
     "@tailwindcss/forms" "^0.5.7"
     iconsax-react "^0.0.8"

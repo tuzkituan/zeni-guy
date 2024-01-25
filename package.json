@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "main-app"
+  ],
   "scripts": {
-    "install:deps": "npm --prefix ./main-app install && npm --prefix ./apps/zeni-ui-components install",
-    "postinstall:deps": "npm --prefix ./main-app run build && npm --prefix ./apps/zeni-ui-components run build",
-    "dev-app:main": "npm --prefix ./main-app run dev",
-    "dev-app:ui-components": "npm --prefix ./apps/zeni-ui-components run build:watch",
-    "preview:ui-components": "npm --prefix ./apps/zeni-ui-components run preview",
+    "install:deps": "yarn install --check-files",
+    "postinstall:deps": "yarn --cwd ./main-app build && yarn --cwd ./apps/zeni-ui-components build",
+    "dev-app:main": "yarn --cwd ./main-app dev",
+    "dev-app:ui-components": "yarn --cwd ./apps/zeni-ui-components build:watch",
+    "preview:ui-components": "yarn --cwd ./apps/zeni-ui-components preview",
     "dev:init": "run-p dev-app:*",
     "dev": "run-p preview:*",
-    "build:main": "npm --prefix ./main-app run build",
-    "build:ui-components": "npm --prefix ./apps/zeni-ui-components run build"
+    "build:main": "yarn --cwd ./main-app build",
+    "build:ui-components": "yarn --cwd ./apps/zeni-ui-components build"
   },
   "keywords": [],
   "author": "",

@@ -11,10 +11,10 @@ export default defineConfig({
       exposes: {
         './portfolio': {
           import: './src/App.tsx',
-          dontAppendStylesToHead: true,
+          dontAppendStylesToHead: false,
         },
       },
-      shared: ['react', 'three'],
+      shared: ['react'],
     }),
   ],
   server: {

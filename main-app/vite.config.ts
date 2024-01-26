@@ -1,6 +1,7 @@
 import federation from '@originjs/vite-plugin-federation';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import DynamicPublicDirectory from 'vite-multiple-assets';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,9 @@ export default defineConfig({
         zeni_ui_components: 'http://localhost:1406/assets/remoteEntry.js',
       },
       shared: ['react'],
+    }),
+    DynamicPublicDirectory(['public', '../apps/portfolio/public'], {
+      ssr: false,
     }),
   ],
   server: {
@@ -28,5 +32,4 @@ export default defineConfig({
     minify: false,
     cssCodeSplit: false,
   },
-  publicDir: '../apps/portfolio/public',
 });

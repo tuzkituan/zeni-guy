@@ -1,4 +1,4 @@
-import { Button } from "zeni-ui";
+import { Button } from 'zeni-ui';
 
 function App() {
   return (

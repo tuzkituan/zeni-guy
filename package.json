@@ -19,7 +19,8 @@
     "dev:init": "run-p dev-app:*",
     "dev": "run-p preview:*",
     "build:main": "yarn --cwd ./main-app build",
-    "build:ui-components": "yarn --cwd ./apps/zeni-ui-components build"
+    "build:ui-components": "yarn --cwd ./apps/zeni-ui-components build",
+    "upgrade-deps": "yarn --cwd ./main-app upgrade && yarn --cwd ./apps/zeni-ui-components upgrade"
   },
   "keywords": [],
   "author": "",

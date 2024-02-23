@@ -26,9 +26,9 @@ class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="flex justify-start items-center gap-2">
-          <Warning size={20} weight="fill" className="text-red-600" />
-          <span className="font-semibold text-sm text-red-600">Something went wrong.</span>
+        <div className="mp-flex mp-justify-start mp-items-center mp-gap-2">
+          <Warning size={20} weight="fill" className="mp-text-red-600" />
+          <span className="mp-font-semibold mp-text-sm mp-text-red-600">Something went wrong.</span>
         </div>
       );
     }

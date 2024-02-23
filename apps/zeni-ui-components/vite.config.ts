@@ -15,7 +15,7 @@ export default defineConfig({
           dontAppendStylesToHead: false,
         },
       },
-      shared: ['react'],
+      shared: ['react', 'react-dom', 'react-router-dom'],
     }),
   ],
   css: {

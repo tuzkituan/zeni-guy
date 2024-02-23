@@ -13,7 +13,7 @@ export default defineConfig({
         portfolio: 'http://localhost:1405/assets/remoteEntry.js',
         zeni_ui_components: 'http://localhost:1406/assets/remoteEntry.js',
       },
-      shared: ['react'],
+      shared: ['react', 'react-dom', 'react-router-dom'],
     }),
     DynamicPublicDirectory(['public', '../apps/portfolio/public'], {
       ssr: false,

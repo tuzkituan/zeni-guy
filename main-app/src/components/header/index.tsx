@@ -1,6 +1,6 @@
-import { GithubLogo, Palette } from '@phosphor-icons/react';
+import { Carrot, GithubLogo, Palette } from '@phosphor-icons/react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, IMenuItem, IThemeType, Menu, useChangeTheme } from 'zeni-ui';
+import { Button, Flex, IMenuItem, IThemeType, Menu, useChangeTheme } from 'zeni-ui';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Header = () => {
       key: 'blueLight',
     },
     {
-      title: _renderMenuTitle('Lavender (Default)', 'baseLight'),
+      title: _renderMenuTitle('Lavender', 'baseLight'),
       key: 'baseLight',
     },
   ];
@@ -36,7 +36,13 @@ const Header = () => {
       key: 'GITHUB',
       title: 'My GitHub',
       child: (
-        <Button className="!mp-p-2" variant="link" onClick={() => navigate('/my')}>
+        <Button
+          className="!mp-p-2"
+          variant="link"
+          onClick={() => {
+            navigate('/my');
+          }}
+        >
           <GithubLogo size={20} weight="bold" />
         </Button>
       ),
@@ -46,9 +52,12 @@ const Header = () => {
   return (
     <div className="mp-w-full mp-border-b mp-border-color-border mp-bg-white">
       <div className="mp-px-6 mp-w-full mp-mx-auto mp-max-w-[992px] mp-flex mp-justify-between mp-items-center mp-gap-4 mp-h-[56px]">
-        <h1 className="mp-text-xl mp-font-bold mp-text-color-primary">
-          <Link to="/">ZENI</Link>
-        </h1>
+        <Link to="/">
+          <Flex gap={8} align="center">
+            <Carrot size={22} weight="bold" className="mp-text-color-primary" />
+            <h1 className="mp-text-xl mp-font-bold mp-text-color-primary">ZENI</h1>
+          </Flex>
+        </Link>
         <div className="mp-flex mp-items-center mp-gap-2 mp-justify-end">
           {options.map((item) => (
             <div key={item.key}>{item.child}</div>

@@ -15,7 +15,7 @@ export default defineConfig({
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),
-    DynamicPublicDirectory(['public', '../apps/portfolio/public'], {
+    DynamicPublicDirectory(['public', '../apps/portfolio/public', '../apps/zeni-ui-components/public'], {
       ssr: false,
     }),
   ],

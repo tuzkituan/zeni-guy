@@ -1,12 +1,13 @@
 import { Suspense, lazy } from 'react';
+import { Spinner } from 'zeni-ui';
 import ErrorBoundary from '../../components/error-boundary';
 import MainLayout from '../../layouts/main-layout';
-const RemoteApp = lazy(() => import('portfolio/portfolio'));
+const RemoteApp = lazy(() => import('zeni_ui_components/app'));
 
-const Portfolio = () => {
+const UIComponents = () => {
   return (
     <MainLayout>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Spinner />}>
         <ErrorBoundary>
           <RemoteApp />
         </ErrorBoundary>
@@ -15,4 +16,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default UIComponents;

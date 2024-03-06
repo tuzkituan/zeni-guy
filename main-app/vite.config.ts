@@ -11,7 +11,8 @@ export default defineConfig({
       name: 'main-app',
       remotes: {
         portfolio: 'http://localhost:1405/assets/remoteEntry.js',
-        zeni_ui_components: 'https://zeni-guy-zeni-ui-components.vercel.app/assets/remoteEntry.js',
+        zeni_ui_components: 'http://localhost:1406/assets/remoteEntry.js',
+        // zeni_ui_components: 'https://zeni-guy-zeni-ui-components.vercel.app/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),

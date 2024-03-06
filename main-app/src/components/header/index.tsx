@@ -1,6 +1,7 @@
 import { Carrot, GithubLogo, Palette } from '@phosphor-icons/react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Flex, IMenuItem, IThemeType, Menu, useChangeTheme } from 'zeni-ui';
+import { Box, Button, Flex, IMenuItem, IThemeType, Menu, useChangeTheme } from 'zeni-ui';
+import { MAX_W } from '../../constants';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,17 +22,15 @@ const Header = () => {
   ];
 
   const options = [
-    {
-      key: 'THEME',
-      title: 'Change Theme',
-      child: (
-        <Menu placement="bottom-end" items={themes} onMenuClick={(val) => setTheme(val as IThemeType)}>
-          <Button className="!mp-p-2" variant="link">
-            <Palette size={20} weight="bold" className="mp-text-color-primary" />
-          </Button>
-        </Menu>
-      ),
-    },
+    // {
+    //   key: 'SEARCH',
+    //   title: 'Search',
+    //   child: (
+    //     <Button className="!mp-p-2" variant="link">
+    //       <MagnifyingGlass size={18} weight="bold" />
+    //     </Button>
+    //   ),
+    // },
     {
       key: 'GITHUB',
       title: 'My GitHub',
@@ -47,24 +46,43 @@ const Header = () => {
         </Button>
       ),
     },
+    {
+      key: 'THEME',
+      title: 'Change Theme',
+      child: (
+        <Menu placement="bottom-end" items={themes} onMenuClick={(val) => setTheme(val as IThemeType)}>
+          <Button className="!mp-p-2" variant="link">
+            <Palette size={20} weight="bold" className="mp-text-color-primary" />
+          </Button>
+        </Menu>
+      ),
+    },
   ];
 
   return (
-    <div className="mp-w-full mp-border-b mp-border-color-border mp-bg-white">
-      <div className="mp-px-6 mp-w-full mp-mx-auto mp-max-w-[992px] mp-flex mp-justify-between mp-items-center mp-gap-4 mp-h-[56px]">
+    <Box className="mp-w-full mp-border-b mp-border-color-border mp-bg-white">
+      <Flex
+        align="center"
+        className="mp-px-6 mp-w-full mp-mx-auto mp-h-[56px]"
+        style={{
+          maxWidth: MAX_W,
+        }}
+        gap={16}
+        justify="space-between"
+      >
         <Link to="/">
           <Flex gap={8} align="center">
             <Carrot size={22} weight="bold" className="mp-text-color-primary" />
             <h1 className="mp-text-xl mp-font-bold mp-text-color-primary">ZENI</h1>
           </Flex>
         </Link>
-        <div className="mp-flex mp-items-center mp-gap-2 mp-justify-end">
+        <Flex align="center" justify="flex-end" gap={8}>
           {options.map((item) => (
-            <div key={item.key}>{item.child}</div>
+            <Box key={item.key}>{item.child}</Box>
           ))}
-        </div>
-      </div>
-    </div>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 
